@@ -1,0 +1,15 @@
+{
+  "name": "damondarkwalkerportfolio",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-netlify": "^1.0.0-next.31",
+    "@sveltejs/kit": "next",
+    "svelte": "^3.42.6"
+  },
+  "type": "module"
+}
