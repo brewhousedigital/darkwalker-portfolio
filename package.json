@@ -2,6 +2,7 @@
   "name": "damondarkwalkerportfolio",
   "version": "0.0.1",
   "scripts": {
+    "start": "svelte-kit dev",
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview"
