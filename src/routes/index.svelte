@@ -3,10 +3,26 @@
 import PortfolioItem from "$lib/components/PortfolioItem.svelte";
 import {loadBlotter} from "$lib/functions/blotter";
 import portfolioItems from "$lib/portfolioItems.json";
+import {onMount} from "svelte";
 
 let artClasses = "";
 
 let showOptions = false;
+
+let themeIcon = "<i class='bi bi-sun'></i>";
+
+onMount(() => {
+    let theme = localStorage.getItem("theme");
+    if(theme === "light") {
+        // Switching to light theme
+        themeIcon = "<i class='bi bi-moon-stars'></i>";
+        document.body.classList.add("light-theme");
+        localStorage.setItem("theme", "light");
+    }
+
+    // Site is ready to be loaded
+    document.body.style.opacity = "1";
+})
 
 function cleanUpAcidEffect() {
     document.querySelectorAll(".acid-effect-delete-me").forEach(item => {
@@ -86,6 +102,20 @@ function handleAcid() {
         })
     }, 500)
 }
+
+function handleTheme() {
+    if(themeIcon.includes("bi-sun")) {
+        // Switching to light theme
+        themeIcon = "<i class='bi bi-moon-stars'></i>";
+        document.body.classList.add("light-theme");
+        localStorage.setItem("theme", "light");
+    } else {
+        // Switching to dark theme
+        themeIcon = "<i class='bi bi-sun'></i>";
+        document.body.classList.remove("light-theme");
+        localStorage.removeItem("theme");
+    }
+}
 </script>
 
 
@@ -94,11 +124,11 @@ function handleAcid() {
         background-color: #222;
         color: #efefef;
         padding-top: 80px;
+        opacity: 0;
+        transition: opacity 300ms;
     }
 
-    :global(#svelte) {
-
-    }
+    :global(body.light-theme) {background-color: #efefef; color: #222;}
 
     :global(::-webkit-scrollbar) {
         width: 20px;
@@ -107,6 +137,8 @@ function handleAcid() {
     :global(::-webkit-scrollbar-track) {
         background-color: #000;
     }
+
+    :global(.light-theme::-webkit-scrollbar-track) {background-color: #eee;}
 
     :global(::-webkit-scrollbar-thumb) {
         border-radius: 100px;
@@ -125,15 +157,30 @@ function handleAcid() {
         z-index: 100;
     }
 
+    :global(.light-theme h1) {background-color: #efefef!important;}
+    :global(.light-theme figcaption) {
+        background-color: #efefef!important;
+        color: rgba(34, 34, 34, 0.5);
+    }
+    :global(.light-theme .options-open) {color: #222!important;}
+
     .options-open {
         color: #fff;
         position: fixed;
         z-index: 105;
         top: 12px;
         right: 12px;
+        font-size: 19px;
+    }
+
+    @media screen and (min-width: 992px) {
+        .options-open {
+            font-size: 26px;
+        }
     }
 
     #options {
+        color: #efefef;
         position: fixed;
         top: 8px;
         right: 8px;
@@ -272,4 +319,6 @@ function handleAcid() {
     <button type="button" class="btn options-btn" on:click={handleVivid}>Vivid</button>
     <!--<button type="button" class="btn options-btn" on:click={handleDistort}>Distort</button>-->
     <button type="button" class="btn options-btn" on:click={handleAcid}>Acid</button>
+    <hr>
+    <button type="button" class="btn options-btn" on:click={handleTheme}>{@html themeIcon} Theme</button>
 </div>
