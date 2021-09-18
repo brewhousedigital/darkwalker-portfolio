@@ -2,6 +2,7 @@
 
 import PortfolioItem from "$lib/components/PortfolioItem.svelte";
 import {loadBlotter} from "$lib/functions/blotter";
+import portfolioItems from "$lib/portfolioItems.json";
 
 let artClasses = "";
 
@@ -255,35 +256,9 @@ function handleAcid() {
 </button>
 
 <div id="portfolio" class={artClasses}>
-    <PortfolioItem file="001.JPG" alt="Man - Ink & Watercolor on Paper - 2020" />
-
-    <PortfolioItem file="002.JPG" alt="Untitled - Acrylic on Masonite" />
-
-    <PortfolioItem file="003.JPG" alt="Masks - Ink & Watercolor on Paper - 2018" />
-
-    <PortfolioItem file="004.JPG" alt="Woman - Acrylic on Masonite - 2019" />
-
-    <PortfolioItem file="005.JPG" alt="Face - Ink on Paper - 2019" />
-
-    <PortfolioItem file="006.JPG" alt="Man and Bunny - Acrylic on Masonite" />
-
-    <PortfolioItem file="007.JPG" alt="Masks - Ink & Watercolor on Paper - 2018" />
-
-    <PortfolioItem file="008.JPG" alt="Spark - Acrylic on Canvas - 2021" />
-
-    <PortfolioItem file="010.PNG" alt="Barista - Digital - 2021" />
-
-    <PortfolioItem file="011.JPG" alt="Mischief - Digital - 2021" />
-
-    <PortfolioItem file="014.JPG" alt="Masks - Acrylic on Canvas - 2003" />
-
-    <PortfolioItem file="015.JPG" alt="Crowd - Acrylic on Canvas - 2002" />
-
-    <PortfolioItem file="door.JPG" alt="Door - Digital - 2021" />
-
-    <PortfolioItem file="fountain.JPG" alt="Fountain - Digital - 2021" />
-
-    <PortfolioItem file="Iris.JPG" alt="Iris - Digital - 2021" />
+    {#each portfolioItems as item}
+        <PortfolioItem file={item.filename} caption={item.caption} />
+    {/each}
 </div><!-- end container -->
 
 <div id="options" class={showOptions ? '' : 'd-none'}>

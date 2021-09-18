@@ -1,13 +1,13 @@
 <script>
     export let file = "";
-    export let alt = "";
+    export let caption = "";
     export let classes = "";
 </script>
 
 
 <figure class="mb-5 mx-auto position-relative">
-    <img src="/images/art/{file}" {alt} class="img-fluid rounded d-block mx-auto {classes}">
-    <figcaption>{alt}</figcaption>
+    <img src="/images/art/{file}" {caption} class="img-fluid rounded d-block mx-auto {classes}">
+    <figcaption>{caption}</figcaption>
 </figure>
 
 
