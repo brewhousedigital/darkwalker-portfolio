@@ -27,12 +27,16 @@ function handleSilence() {
     cleanUpAcidEffect();
 
     artClasses = "";
+
+    showOptions = false;
 }
 
 function handleVivid() {
     cleanUpAcidEffect();
 
     artClasses = "vivid";
+
+    showOptions = false;
 }
 
 function handleDistort() {
@@ -41,6 +45,8 @@ function handleDistort() {
     artClasses = "";
 
     //loadBlotter();
+
+    showOptions = false;
 }
 
 function handleAcid() {
@@ -70,6 +76,8 @@ function handleAcid() {
     })
 
     artClasses = "acid";
+
+    showOptions = false;
 
     setTimeout(() => {
         document.querySelectorAll(".acid-effect-delete-me").forEach(item => {
