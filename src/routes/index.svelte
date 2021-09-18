@@ -115,6 +115,8 @@ function handleTheme() {
         document.body.classList.remove("light-theme");
         localStorage.removeItem("theme");
     }
+
+    showOptions = false;
 }
 </script>
 
