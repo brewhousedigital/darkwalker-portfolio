@@ -271,7 +271,7 @@ function handleAcid() {
 
     <PortfolioItem file="008.JPG" alt="Spark - Acrylic on Canvas - 2021" />
 
-    <PortfolioItem file="010.JPG" alt="Barista - Digital - 2021" />
+    <PortfolioItem file="010.PNG" alt="Barista - Digital - 2021" />
 
     <PortfolioItem file="011.JPG" alt="Mischief - Digital - 2021" />
 
