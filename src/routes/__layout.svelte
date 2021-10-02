@@ -153,7 +153,7 @@
     :global(.light-theme h1 a) {color: #222!important}
     :global(.light-theme figcaption) {
         background-color: #efefef!important;
-        color: rgba(34, 34, 34, 0.5);
+        color: rgba(34, 34, 34, 0.5)!important;
     }
     :global(.light-theme .options-open) {color: #222!important;}
 
