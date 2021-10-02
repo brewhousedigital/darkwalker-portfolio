@@ -136,9 +136,8 @@
         background-color: #2C3E50;
     }
 
-    h1 {font-family: 'Shadows Into Light', cursive;}
-
     h1 {
+        font-family: 'Shadows Into Light', cursive;
         background-color: #222;
         width: 100%;
         position: fixed;
@@ -146,7 +145,12 @@
         z-index: 100;
     }
 
+    h1 a {
+        color: #efefef
+    }
+
     :global(.light-theme h1) {background-color: #efefef!important;}
+    :global(.light-theme h1 a) {color: #222!important}
     :global(.light-theme figcaption) {
         background-color: #efefef!important;
         color: rgba(34, 34, 34, 0.5);
@@ -286,7 +290,7 @@
 
 
 <h1 class="text-center font-cursive py-3 mb-3">
-    <a href="/" class="text-decoration-none" style="color: #efefef" sveltekit:prefetch>daemon kelli art</a>
+    <a href="/" class="text-decoration-none" sveltekit:prefetch>daemon kelli art</a>
 </h1>
 
 <button type="button" class="btn options-open" on:click={() => {showOptions = !showOptions}}>
