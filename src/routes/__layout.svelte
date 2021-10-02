@@ -285,7 +285,9 @@
 </style>
 
 
-<h1 class="text-center font-cursive py-3 mb-3">daemon kelli art </h1>
+<h1 class="text-center font-cursive py-3 mb-3">
+    <a href="/" class="text-decoration-none" style="color: #efefef" sveltekit:prefetch>daemon kelli art</a>
+</h1>
 
 <button type="button" class="btn options-open" on:click={() => {showOptions = !showOptions}}>
     <i class="bi bi-text-right"></i>
